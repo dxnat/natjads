@@ -1,0 +1,50 @@
+.ds-tooltip {
+  max-width: 240px;
+  display: flex;
+  align-items: center;
+  gap: var(--tooltip-gap);
+  padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+  border-radius: var(--tooltip-radius);
+  background: var(--tooltip-background);
+  color: var(--tooltip-content);
+  font: var(--tooltip-type);
+  letter-spacing: var(--tooltip-type-letter-spacing);
+  box-shadow: var(--tooltip-elevation);
+  outline: none;
+  --_shift: 4px;
+}
+
+.ds-tooltip[data-entering] {
+  animation: ds-tooltip-in 140ms ease-out;
+}
+
+.ds-tooltip[data-exiting] {
+  animation: ds-tooltip-in 100ms ease-in reverse;
+}
+
+.ds-tooltip[data-placement="top"] { --_from: translateY(var(--_shift)); }
+.ds-tooltip[data-placement="bottom"] { --_from: translateY(calc(-1 * var(--_shift))); }
+.ds-tooltip[data-placement="left"] { --_from: translateX(var(--_shift)); }
+.ds-tooltip[data-placement="right"] { --_from: translateX(calc(-1 * var(--_shift))); }
+
+.ds-tooltip__arrow svg {
+  display: block;
+  fill: var(--tooltip-background);
+}
+
+.ds-tooltip__arrow[data-placement="bottom"] svg { transform: rotate(180deg); }
+.ds-tooltip__arrow[data-placement="left"] svg { transform: rotate(-90deg); }
+.ds-tooltip__arrow[data-placement="right"] svg { transform: rotate(90deg); }
+
+@keyframes ds-tooltip-in {
+  from {
+    opacity: 0;
+    transform: var(--_from, none);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-tooltip {
+    --_shift: 0px;
+  }
+}

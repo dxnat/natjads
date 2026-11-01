@@ -1,0 +1,1012 @@
+{
+  "id": "ds.button.tokens",
+  "component": "ds.button",
+  "name": "Button tokens",
+  "version": "0.1.0",
+  "status": "draft",
+  "description": "Component-tier tokens that implement ds.button, resolved through the semantic and primitive tiers for each mode.",
+  "source": {
+    "componentContract": "src/components/Button/button.contract.json",
+    "tokens": "tokens/figma-variables.json",
+    "figma": {
+      "fileKey": "GcTNmULEitLCTlmvIh2CJ3",
+      "collection": "03 Component"
+    },
+    "generatedBy": "scripts/build-contracts.mjs"
+  },
+  "modes": [
+    "light",
+    "dark"
+  ],
+  "tiers": [
+    "component",
+    "semantic",
+    "primitive"
+  ],
+  "tokens": [
+    {
+      "name": "button.primary.background.default",
+      "figma": "button/primary/background/default",
+      "css": "--button-primary-background-default",
+      "type": "color",
+      "references": "colour.action.primary.default",
+      "chain": [
+        "colour.action.primary.default",
+        "colour.orange.500"
+      ],
+      "value": {
+        "light": "#ef5612",
+        "dark": "#ef5612"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "background-color",
+          "state": "default",
+          "when": {
+            "variant": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.primary.background.hover",
+      "figma": "button/primary/background/hover",
+      "css": "--button-primary-background-hover",
+      "type": "color",
+      "references": "colour.action.primary.hover",
+      "chain": [
+        "colour.action.primary.hover",
+        "colour.orange.600"
+      ],
+      "value": {
+        "light": "#e34e10",
+        "dark": "#e34e10"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "background-color",
+          "state": "hover",
+          "when": {
+            "variant": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.primary.background.pressed",
+      "figma": "button/primary/background/pressed",
+      "css": "--button-primary-background-pressed",
+      "type": "color",
+      "references": "colour.action.primary.pressed",
+      "chain": [
+        "colour.action.primary.pressed",
+        "colour.orange.700"
+      ],
+      "value": {
+        "light": "#d7470c",
+        "dark": "#d7470c"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "background-color",
+          "state": "pressed",
+          "when": {
+            "variant": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.primary.content",
+      "figma": "button/primary/content",
+      "css": "--button-primary-content",
+      "type": "color",
+      "references": "colour.content.on-accent",
+      "chain": [
+        "colour.content.on-accent",
+        "colour.neutral.950"
+      ],
+      "value": {
+        "light": "#020617",
+        "dark": "#020617"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "color",
+          "state": "default",
+          "when": {
+            "variant": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.secondary.background.default",
+      "figma": "button/secondary/background/default",
+      "css": "--button-secondary-background-default",
+      "type": "color",
+      "references": "colour.action.secondary.default",
+      "chain": [
+        "colour.action.secondary.default",
+        "colour.neutral.100"
+      ],
+      "value": {
+        "light": "#f1f5f9",
+        "dark": "#1e293b"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "background-color",
+          "state": "default",
+          "when": {
+            "variant": "secondary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.secondary.background.hover",
+      "figma": "button/secondary/background/hover",
+      "css": "--button-secondary-background-hover",
+      "type": "color",
+      "references": "colour.action.secondary.hover",
+      "chain": [
+        "colour.action.secondary.hover",
+        "colour.neutral.200"
+      ],
+      "value": {
+        "light": "#e2e8f0",
+        "dark": "#334155"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "background-color",
+          "state": "hover",
+          "when": {
+            "variant": "secondary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.secondary.background.pressed",
+      "figma": "button/secondary/background/pressed",
+      "css": "--button-secondary-background-pressed",
+      "type": "color",
+      "references": "colour.action.secondary.pressed",
+      "chain": [
+        "colour.action.secondary.pressed",
+        "colour.neutral.300"
+      ],
+      "value": {
+        "light": "#cbd5e1",
+        "dark": "#475569"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "background-color",
+          "state": "pressed",
+          "when": {
+            "variant": "secondary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.secondary.content",
+      "figma": "button/secondary/content",
+      "css": "--button-secondary-content",
+      "type": "color",
+      "references": "colour.content.primary",
+      "chain": [
+        "colour.content.primary",
+        "colour.neutral.900"
+      ],
+      "value": {
+        "light": "#0f172a",
+        "dark": "#f8fafc"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "color",
+          "state": "default",
+          "when": {
+            "variant": "secondary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.danger.background.default",
+      "figma": "button/danger/background/default",
+      "css": "--button-danger-background-default",
+      "type": "color",
+      "references": "colour.action.danger.default",
+      "chain": [
+        "colour.action.danger.default",
+        "colour.red.700"
+      ],
+      "value": {
+        "light": "#b91c1c",
+        "dark": "#dc2626"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "background-color",
+          "state": "default",
+          "when": {
+            "variant": "danger"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.danger.background.hover",
+      "figma": "button/danger/background/hover",
+      "css": "--button-danger-background-hover",
+      "type": "color",
+      "references": "colour.action.danger.hover",
+      "chain": [
+        "colour.action.danger.hover",
+        "colour.red.800"
+      ],
+      "value": {
+        "light": "#991b1b",
+        "dark": "#b91c1c"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "background-color",
+          "state": "hover",
+          "when": {
+            "variant": "danger"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.danger.background.pressed",
+      "figma": "button/danger/background/pressed",
+      "css": "--button-danger-background-pressed",
+      "type": "color",
+      "references": "colour.action.danger.pressed",
+      "chain": [
+        "colour.action.danger.pressed",
+        "colour.red.900"
+      ],
+      "value": {
+        "light": "#7f1d1d",
+        "dark": "#991b1b"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "background-color",
+          "state": "pressed",
+          "when": {
+            "variant": "danger"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.danger.content",
+      "figma": "button/danger/content",
+      "css": "--button-danger-content",
+      "type": "color",
+      "references": "colour.content.on-danger",
+      "chain": [
+        "colour.content.on-danger",
+        "colour.white"
+      ],
+      "value": {
+        "light": "#ffffff",
+        "dark": "#ffffff"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "color",
+          "state": "default",
+          "when": {
+            "variant": "danger"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.disabled.background",
+      "figma": "button/disabled/background",
+      "css": "--button-disabled-background",
+      "type": "color",
+      "references": "colour.action.disabled.background",
+      "chain": [
+        "colour.action.disabled.background",
+        "colour.neutral.100"
+      ],
+      "value": {
+        "light": "#f1f5f9",
+        "dark": "#1e293b"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "background-color",
+          "state": "disabled"
+        }
+      ]
+    },
+    {
+      "name": "button.disabled.content",
+      "figma": "button/disabled/content",
+      "css": "--button-disabled-content",
+      "type": "color",
+      "references": "colour.action.disabled.content",
+      "chain": [
+        "colour.action.disabled.content",
+        "colour.neutral.500"
+      ],
+      "value": {
+        "light": "#64748b",
+        "dark": "#64748b"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "color",
+          "state": "disabled"
+        }
+      ]
+    },
+    {
+      "name": "button.focus.ring",
+      "figma": "button/focus/ring",
+      "css": "--button-focus-ring",
+      "type": "color",
+      "references": "colour.focus.ring",
+      "chain": [
+        "colour.focus.ring",
+        "colour.orange.700"
+      ],
+      "value": {
+        "light": "#d7470c",
+        "dark": "#fc7c40"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "outline-color",
+          "state": "focus-visible"
+        }
+      ]
+    },
+    {
+      "name": "button.radius",
+      "figma": "button/radius",
+      "css": "--button-radius",
+      "type": "dimension",
+      "references": "radius.control",
+      "chain": [
+        "radius.control",
+        "radius.md"
+      ],
+      "value": {
+        "light": "8px",
+        "dark": "8px"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "border-radius",
+          "state": "default"
+        }
+      ]
+    },
+    {
+      "name": "button.gap",
+      "figma": "button/gap",
+      "css": "--button-gap",
+      "type": "dimension",
+      "references": "spacing.control.gap",
+      "chain": [
+        "spacing.control.gap",
+        "spacing.2"
+      ],
+      "value": {
+        "light": "8px",
+        "dark": "8px"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "gap",
+          "state": "default"
+        }
+      ]
+    },
+    {
+      "name": "button.sm.padding-x",
+      "figma": "button/sm/padding-x",
+      "css": "--button-sm-padding-x",
+      "type": "dimension",
+      "references": "spacing.control.padding-x.sm",
+      "chain": [
+        "spacing.control.padding-x.sm",
+        "spacing.3"
+      ],
+      "value": {
+        "light": "12px",
+        "dark": "12px"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "padding-inline",
+          "state": "default",
+          "when": {
+            "size": "sm"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.sm.padding-y",
+      "figma": "button/sm/padding-y",
+      "css": "--button-sm-padding-y",
+      "type": "dimension",
+      "references": "spacing.control.padding-y.sm",
+      "chain": [
+        "spacing.control.padding-y.sm",
+        "spacing.2"
+      ],
+      "value": {
+        "light": "8px",
+        "dark": "8px"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "padding-block",
+          "state": "default",
+          "when": {
+            "size": "sm"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.md.padding-x",
+      "figma": "button/md/padding-x",
+      "css": "--button-md-padding-x",
+      "type": "dimension",
+      "references": "spacing.control.padding-x.md",
+      "chain": [
+        "spacing.control.padding-x.md",
+        "spacing.4"
+      ],
+      "value": {
+        "light": "16px",
+        "dark": "16px"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "padding-inline",
+          "state": "default",
+          "when": {
+            "size": "md"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.md.padding-y",
+      "figma": "button/md/padding-y",
+      "css": "--button-md-padding-y",
+      "type": "dimension",
+      "references": "spacing.control.padding-y.md",
+      "chain": [
+        "spacing.control.padding-y.md",
+        "spacing.3"
+      ],
+      "value": {
+        "light": "12px",
+        "dark": "12px"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "padding-block",
+          "state": "default",
+          "when": {
+            "size": "md"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.lg.padding-x",
+      "figma": "button/lg/padding-x",
+      "css": "--button-lg-padding-x",
+      "type": "dimension",
+      "references": "spacing.control.padding-x.lg",
+      "chain": [
+        "spacing.control.padding-x.lg",
+        "spacing.5"
+      ],
+      "value": {
+        "light": "20px",
+        "dark": "20px"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "padding-inline",
+          "state": "default",
+          "when": {
+            "size": "lg"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.lg.padding-y",
+      "figma": "button/lg/padding-y",
+      "css": "--button-lg-padding-y",
+      "type": "dimension",
+      "references": "spacing.control.padding-y.lg",
+      "chain": [
+        "spacing.control.padding-y.lg",
+        "spacing.4"
+      ],
+      "value": {
+        "light": "16px",
+        "dark": "16px"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "padding-block",
+          "state": "default",
+          "when": {
+            "size": "lg"
+          }
+        }
+      ]
+    },
+    {
+      "name": "button.type.family",
+      "figma": "button/type/family",
+      "css": "--button-type-family",
+      "type": "fontFamily",
+      "references": "type.label.md.family",
+      "chain": [
+        "type.label.md.family",
+        "type.family.sans"
+      ],
+      "value": {
+        "light": "Inter",
+        "dark": "Inter"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "font-family",
+          "state": "default"
+        }
+      ]
+    },
+    {
+      "name": "button.type.font-size",
+      "figma": "button/type/font-size",
+      "css": "--button-type-font-size",
+      "type": "dimension",
+      "references": "type.label.md.font-size",
+      "chain": [
+        "type.label.md.font-size",
+        "type.font-size.14"
+      ],
+      "value": {
+        "light": "14px",
+        "dark": "14px"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "font-size",
+          "state": "default"
+        }
+      ]
+    },
+    {
+      "name": "button.type.line-height",
+      "figma": "button/type/line-height",
+      "css": "--button-type-line-height",
+      "type": "dimension",
+      "references": "type.label.md.line-height",
+      "chain": [
+        "type.label.md.line-height",
+        "type.line-height.20"
+      ],
+      "value": {
+        "light": "20px",
+        "dark": "20px"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "line-height",
+          "state": "default"
+        }
+      ]
+    },
+    {
+      "name": "button.type.weight",
+      "figma": "button/type/weight",
+      "css": "--button-type-weight",
+      "type": "dimension",
+      "references": "type.label.md.weight",
+      "chain": [
+        "type.label.md.weight",
+        "type.weight.semibold"
+      ],
+      "value": {
+        "light": 600,
+        "dark": 600
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "font-weight",
+          "state": "default"
+        }
+      ]
+    },
+    {
+      "name": "button.type.letter-spacing",
+      "figma": "button/type/letter-spacing",
+      "css": "--button-type-letter-spacing",
+      "type": "dimension",
+      "references": "type.label.md.letter-spacing",
+      "chain": [
+        "type.label.md.letter-spacing",
+        "type.letter-spacing.normal"
+      ],
+      "value": {
+        "light": "0",
+        "dark": "0"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "letter-spacing",
+          "state": "default"
+        }
+      ]
+    },
+    {
+      "name": "button.elevation.x",
+      "figma": "button/elevation/x",
+      "css": "--button-elevation-x",
+      "type": "dimension",
+      "references": "elevation.flat.x",
+      "chain": [
+        "elevation.flat.x",
+        "elevation.0.x"
+      ],
+      "value": {
+        "light": "0",
+        "dark": "0"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "box-shadow",
+          "state": "default",
+          "via": "button.elevation"
+        }
+      ]
+    },
+    {
+      "name": "button.elevation.y",
+      "figma": "button/elevation/y",
+      "css": "--button-elevation-y",
+      "type": "dimension",
+      "references": "elevation.flat.y",
+      "chain": [
+        "elevation.flat.y",
+        "elevation.0.y"
+      ],
+      "value": {
+        "light": "0",
+        "dark": "0"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "box-shadow",
+          "state": "default",
+          "via": "button.elevation"
+        }
+      ]
+    },
+    {
+      "name": "button.elevation.blur",
+      "figma": "button/elevation/blur",
+      "css": "--button-elevation-blur",
+      "type": "dimension",
+      "references": "elevation.flat.blur",
+      "chain": [
+        "elevation.flat.blur",
+        "elevation.0.blur"
+      ],
+      "value": {
+        "light": "0",
+        "dark": "0"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "box-shadow",
+          "state": "default",
+          "via": "button.elevation"
+        }
+      ]
+    },
+    {
+      "name": "button.elevation.spread",
+      "figma": "button/elevation/spread",
+      "css": "--button-elevation-spread",
+      "type": "dimension",
+      "references": "elevation.flat.spread",
+      "chain": [
+        "elevation.flat.spread",
+        "elevation.0.spread"
+      ],
+      "value": {
+        "light": "0",
+        "dark": "0"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "box-shadow",
+          "state": "default",
+          "via": "button.elevation"
+        }
+      ]
+    },
+    {
+      "name": "button.elevation.colour",
+      "figma": "button/elevation/colour",
+      "css": "--button-elevation-color",
+      "type": "color",
+      "references": "elevation.flat.colour",
+      "chain": [
+        "elevation.flat.colour",
+        "elevation.0.colour"
+      ],
+      "value": {
+        "light": "#00000000",
+        "dark": "#00000000"
+      },
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "box-shadow",
+          "state": "default",
+          "via": "button.elevation"
+        }
+      ]
+    }
+  ],
+  "composites": [
+    {
+      "name": "button.elevation",
+      "css": "--button-elevation",
+      "kind": "shadow",
+      "members": [
+        "button.elevation.x",
+        "button.elevation.y",
+        "button.elevation.blur",
+        "button.elevation.spread",
+        "button.elevation.colour"
+      ],
+      "usedBy": [
+        {
+          "part": "root",
+          "property": "box-shadow",
+          "state": "default"
+        }
+      ]
+    }
+  ],
+  "literals": [
+    {
+      "part": "root",
+      "state": "pressed",
+      "property": "transform",
+      "value": "scale(0.98)"
+    },
+    {
+      "part": "root",
+      "state": "focus-visible",
+      "property": "outline-width",
+      "value": "2px"
+    },
+    {
+      "part": "root",
+      "state": "focus-visible",
+      "property": "outline-offset",
+      "value": "2px"
+    },
+    {
+      "part": "root",
+      "state": "disabled",
+      "property": "cursor",
+      "value": "not-allowed"
+    },
+    {
+      "part": "root",
+      "state": "loading",
+      "property": "cursor",
+      "value": "progress"
+    }
+  ],
+  "contrast": [
+    {
+      "when": {
+        "variant": "primary"
+      },
+      "state": "default",
+      "foreground": "button.primary.content",
+      "background": "button.primary.background.default",
+      "ratio": {
+        "light": 5.77,
+        "dark": 5.77
+      },
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "when": {
+        "variant": "primary"
+      },
+      "state": "hover",
+      "foreground": "button.primary.content",
+      "background": "button.primary.background.hover",
+      "ratio": {
+        "light": 5.15,
+        "dark": 5.15
+      },
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "when": {
+        "variant": "primary"
+      },
+      "state": "pressed",
+      "foreground": "button.primary.content",
+      "background": "button.primary.background.pressed",
+      "ratio": {
+        "light": 4.61,
+        "dark": 4.61
+      },
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "when": {},
+      "state": "disabled",
+      "foreground": "button.disabled.content",
+      "background": "button.disabled.background",
+      "ratio": {
+        "light": 4.34,
+        "dark": 3.07
+      },
+      "required": null,
+      "pass": null
+    },
+    {
+      "when": {
+        "variant": "secondary"
+      },
+      "state": "default",
+      "foreground": "button.secondary.content",
+      "background": "button.secondary.background.default",
+      "ratio": {
+        "light": 16.3,
+        "dark": 13.98
+      },
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "when": {
+        "variant": "secondary"
+      },
+      "state": "hover",
+      "foreground": "button.secondary.content",
+      "background": "button.secondary.background.hover",
+      "ratio": {
+        "light": 14.48,
+        "dark": 9.9
+      },
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "when": {
+        "variant": "secondary"
+      },
+      "state": "pressed",
+      "foreground": "button.secondary.content",
+      "background": "button.secondary.background.pressed",
+      "ratio": {
+        "light": 12.02,
+        "dark": 7.24
+      },
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "when": {
+        "variant": "danger"
+      },
+      "state": "default",
+      "foreground": "button.danger.content",
+      "background": "button.danger.background.default",
+      "ratio": {
+        "light": 6.47,
+        "dark": 4.83
+      },
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "when": {
+        "variant": "danger"
+      },
+      "state": "hover",
+      "foreground": "button.danger.content",
+      "background": "button.danger.background.hover",
+      "ratio": {
+        "light": 8.31,
+        "dark": 6.47
+      },
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "when": {
+        "variant": "danger"
+      },
+      "state": "pressed",
+      "foreground": "button.danger.content",
+      "background": "button.danger.background.pressed",
+      "ratio": {
+        "light": 10.02,
+        "dark": 8.31
+      },
+      "required": 4.5,
+      "pass": true
+    }
+  ],
+  "coverage": {
+    "total": 33,
+    "referenced": 33,
+    "unreferenced": [],
+    "missing": []
+  }
+}

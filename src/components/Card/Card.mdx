@@ -1,0 +1,50 @@
+import { Meta, Canvas, Controls, ArgTypes, Source } from "@storybook/addon-docs/blocks";
+import * as Stories from "./Card.stories";
+import { TokenTable } from "../../docs/DocBlocks";
+
+<Meta of={Stories} />
+
+# Card
+
+A raised container that groups related content and actions. Cards are static, so they don't use a React Aria primitive. Interactive children, such as `Button`, bring their own behaviour.
+
+<Canvas of={Stories.Playground} />
+<Controls of={Stories.Playground} />
+
+## Usage
+
+<Source language="tsx" code={`import { Card, Button } from "natjads";
+
+<Card
+  title="Monthly report"
+  footer={<Button size="sm">Open report</Button>}
+>
+  Revenue grew 12% compared with last month.
+</Card>`} />
+
+## With actions
+
+<Canvas of={Stories.WithActions} />
+
+## Rich content
+
+`children` can be any content. The first and last child margins are removed so padding stays even.
+
+<Canvas of={Stories.RichContent} />
+
+## In a grid
+
+<Canvas of={Stories.Grid} />
+
+## Accessibility
+
+- Renders an `<article>`, with the title as a heading. Set `headingLevel` so headings follow the page outline (the default is `h3`).
+- Avoid making the whole card clickable. Put a clear link or button inside it instead, so screen readers don't read the whole card as one control.
+
+## Props
+
+<ArgTypes of={Stories} include={["title", "headingLevel", "footer", "children", "className"]} />
+
+## Design tokens
+
+<TokenTable prefix="card/" />

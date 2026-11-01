@@ -1,0 +1,61 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Foundations/Token architecture" />
+
+# Token architecture
+
+Tokens come from three Figma variable collections. Each tier only references the tier below it.
+
+```
+Component tier       --button-primary-background-default
+   │ references
+Semantic tier        --color-action-primary-default        (Light | Dark)
+   │ references
+Primitive tier       --color-orange-500: #ef5612
+```
+
+| Tier | Figma collection | Count | Modes | Who uses it |
+| --- | --- | --- | --- | --- |
+| Primitive | 01 Primitives | 150 | Base | Semantic tokens only |
+| Semantic | 02 Semantic | 176 | Light, Dark | Component tokens, page-level layout |
+| Component | 03 Component | 147 | Base | Component CSS |
+
+## Naming
+
+CSS names follow the Figma path, joined with `-`. `colour` is spelled `color` to match CSS:
+
+| Figma variable | CSS custom property |
+| --- | --- |
+| `colour/action/primary/default` | `--color-action-primary-default` |
+| `button/sm/padding-x` | `--button-sm-padding-x` |
+| `type/body/md/font-size` | `--type-body-md-font-size` |
+
+## Units
+
+- Sizes, spacing, radius, line height and letter spacing are in `px`.
+- Font weights are unitless.
+- Font families include system fallbacks.
+
+## Composite tokens
+
+Figma stores shadows and type styles as separate parts. The build also writes one-line shortcuts:
+
+| Shortcut | Expands to | Use with |
+| --- | --- | --- |
+| `--card-elevation` | `x y blur spread color` | `box-shadow` |
+| `--button-type` | `weight size / line-height family` | `font` (set `letter-spacing` separately) |
+
+## Light and Dark
+
+Only semantic tokens change between modes. Component tokens point at semantic tokens, so they switch automatically. They are re-declared on every `[data-theme]` element, so a theme set on part of the page also works.
+
+## Gaps in the component tier
+
+A few styles have no component token yet, so they use the closest semantic token. Adding these to the **03 Component** collection in Figma would make the component tier complete:
+
+| Where | Uses | Suggested component token |
+| --- | --- | --- |
+| Input label | `--type-label-md` | `input/label/type/*`, `input/label/content` |
+| Input helper and error text | `--type-caption` | `input/description/type/*` |
+| Badge neutral border | `--color-transparent` | `badge/neutral/border` |
+| Dialog overlay padding | `--spacing-inset-md` | `dialog/overlay/padding` |

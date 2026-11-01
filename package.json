@@ -1,0 +1,35 @@
+{
+  "name": "natjads",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "React design system built on React Aria Components and Figma design tokens",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "docs:build": "storybook build -o docs-dist",
+    "tokens": "node scripts/build-tokens.mjs && node scripts/build-contracts.mjs",
+    "typecheck": "tsc --noEmit",
+    "contracts": "node scripts/build-contracts.mjs"
+  },
+  "dependencies": {
+    "react-aria-components": "^1.22.1"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.6.5",
+    "@storybook/addon-docs": "^10.6.5",
+    "@storybook/react-vite": "^10.6.5",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "storybook": "^10.6.5",
+    "typescript": "~5.9.3",
+    "vite": "^8.0.0"
+  }
+}

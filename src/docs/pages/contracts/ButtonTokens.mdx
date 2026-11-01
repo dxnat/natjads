@@ -1,0 +1,17 @@
+import { Meta, Source } from "@storybook/addon-docs/blocks";
+import { TokenContract } from "../../Contract";
+import contract from "../../../components/Button/button.tokens.contract.json";
+
+<Meta title="Contracts/Button/Tokens" />
+
+# Button · Token contract
+
+The token-level contract describes **how Button is styled**: every `button/*` token from the Figma **03 Component** collection, which slot in the [component contract](?path=/docs/contracts-button-component--docs) uses it, how it resolves through the semantic and primitive tiers, and the final Light and Dark values. It also checks text contrast for each variant and state.
+
+Generated file: `src/components/Button/button.tokens.contract.json`. Don't edit it by hand. Run `npm run contracts` after changing the component contract or the tokens.
+
+<TokenContract contract={contract} />
+
+## Raw contract
+
+<Source language="json" code={JSON.stringify(contract, null, 2)} />

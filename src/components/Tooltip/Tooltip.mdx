@@ -1,0 +1,53 @@
+import { Meta, Canvas, Controls, ArgTypes, Source } from "@storybook/addon-docs/blocks";
+import * as Stories from "./Tooltip.stories";
+import { TokenTable } from "../../docs/DocBlocks";
+
+<Meta of={Stories} />
+
+# Tooltip
+
+A short hint that appears when the trigger is hovered or focused. Built on the React Aria [`TooltipTrigger` and `Tooltip`](https://react-spectrum.adobe.com/react-aria/Tooltip.html) components.
+
+<Canvas of={Stories.AlwaysOpen} />
+
+## Playground
+
+Hover or tab to the button.
+
+<Canvas of={Stories.Playground} />
+<Controls of={Stories.Playground} />
+
+## Usage
+
+<Source language="tsx" code={`import { Tooltip, TooltipTrigger, Button } from "natjads";
+
+<TooltipTrigger delay={300}>
+  <Button variant="secondary" aria-label="Copy link"><CopyIcon /></Button>
+  <Tooltip>Copy link</Tooltip>
+</TooltipTrigger>`} />
+
+## Placement
+
+The tooltip flips automatically when there isn't room. The arrow follows the placement.
+
+<Canvas of={Stories.Placements} />
+
+## Icon buttons
+
+<Canvas of={Stories.IconButton} />
+
+## Accessibility
+
+- React Aria opens the tooltip on hover (after `delay`) and on keyboard focus. It closes on <kbd>Esc</kbd>, blur or pointer leave, and links the tooltip to the trigger with `aria-describedby`.
+- Tooltips don't appear on touch screens. Never put essential information or interactive content in them.
+- The trigger must be focusable, such as a `Button`. A tooltip describes its trigger; it doesn't replace an `aria-label`.
+
+## Props
+
+Accepts all [React Aria Tooltip props](https://react-spectrum.adobe.com/react-aria/Tooltip.html#props) plus `showArrow`. `TooltipTrigger` accepts `delay`, `closeDelay`, `isOpen`, `defaultOpen`, `onOpenChange` and `isDisabled`.
+
+<ArgTypes of={Stories} include={["children", "placement", "offset", "showArrow", "crossOffset", "className"]} />
+
+## Design tokens
+
+<TokenTable prefix="tooltip/" />

@@ -1,0 +1,283 @@
+{
+  "id": "ds.button",
+  "name": "Button",
+  "version": "0.1.0",
+  "status": "draft",
+  "description": "Triggers an action or event. Use one primary button per context.",
+  "semantics": {
+    "element": "button",
+    "role": "button",
+    "primitive": {
+      "library": "react-aria-components",
+      "component": "Button"
+    }
+  },
+  "props": [
+    {
+      "name": "variant",
+      "description": "Visual prominence of the action.",
+      "type": {
+        "enum": [
+          "primary",
+          "secondary",
+          "danger"
+        ]
+      },
+      "default": "primary",
+      "bindings": {
+        "figma": {
+          "kind": "VARIANT",
+          "property": "Variant",
+          "values": {
+            "primary": "Primary",
+            "secondary": "Secondary",
+            "danger": "Danger"
+          }
+        },
+        "code": {
+          "prop": "variant",
+          "attribute": "data-variant"
+        }
+      }
+    },
+    {
+      "name": "size",
+      "description": "Control density.",
+      "type": {
+        "enum": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "default": "md",
+      "bindings": {
+        "figma": {
+          "kind": "VARIANT",
+          "property": "Size",
+          "values": {
+            "sm": "Small",
+            "md": "Medium",
+            "lg": "Large"
+          }
+        },
+        "code": {
+          "prop": "size",
+          "attribute": "data-size"
+        }
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "Prevents interaction, removes the button from the tab order and communicates unavailability.",
+      "type": "boolean",
+      "default": false,
+      "bindings": {
+        "figma": {
+          "kind": "VARIANT",
+          "property": "State",
+          "values": {
+            "true": "Disabled",
+            "false": "Default"
+          }
+        },
+        "code": {
+          "prop": "isDisabled"
+        }
+      }
+    },
+    {
+      "name": "loading",
+      "description": "Shows a spinning busy indicator beside the label while an async action resolves. The button stays focusable, ignores presses and announces the pending state.",
+      "type": "boolean",
+      "default": false,
+      "bindings": {
+        "figma": {
+          "kind": "BOOLEAN",
+          "property": "Loading"
+        },
+        "code": {
+          "prop": "isPending"
+        }
+      }
+    },
+    {
+      "name": "children",
+      "description": "Button label. May include a leading icon; icon-only buttons need an aria-label.",
+      "type": "text",
+      "default": "Button",
+      "bindings": {
+        "figma": {
+          "kind": "TEXT",
+          "property": "Label"
+        },
+        "code": {
+          "prop": "children"
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "press",
+      "description": "Fires on mouse, touch, pen and keyboard (Enter / Space) activation.",
+      "bindings": {
+        "code": {
+          "prop": "onPress"
+        }
+      }
+    }
+  ],
+  "states": [
+    "hover",
+    "pressed",
+    "focus-visible",
+    "disabled",
+    "loading"
+  ],
+  "stateBindings": {
+    "hover": {
+      "code": {
+        "attribute": "data-hovered"
+      },
+      "figma": {
+        "kind": "VARIANT",
+        "property": "State",
+        "value": "Hover"
+      }
+    },
+    "pressed": {
+      "code": {
+        "attribute": "data-pressed"
+      },
+      "figma": {
+        "kind": "VARIANT",
+        "property": "State",
+        "value": "Pressed"
+      }
+    },
+    "focus-visible": {
+      "code": {
+        "attribute": "data-focus-visible"
+      },
+      "figma": {
+        "kind": "BOOLEAN",
+        "property": "Focused"
+      }
+    },
+    "disabled": {
+      "code": {
+        "attribute": "data-disabled"
+      },
+      "figma": {
+        "kind": "VARIANT",
+        "property": "State",
+        "value": "Disabled"
+      }
+    },
+    "loading": {
+      "code": {
+        "attribute": "data-pending"
+      },
+      "figma": {
+        "kind": "BOOLEAN",
+        "property": "Loading"
+      }
+    }
+  },
+  "figmaStatePreviews": true,
+  "anatomy": {
+    "root": {
+      "tokens": {
+        "background-color": "{button.{variant}.background.default}",
+        "color": "{button.{variant}.content}",
+        "padding-inline": "{button.{size}.padding-x}",
+        "padding-block": "{button.{size}.padding-y}",
+        "border-radius": "{button.radius}",
+        "gap": "{button.gap}",
+        "font-family": "{button.type.family}",
+        "font-weight": "{button.type.weight}",
+        "font-size": "{button.type.font-size}",
+        "line-height": "{button.type.line-height}",
+        "letter-spacing": "{button.type.letter-spacing}",
+        "box-shadow": "{button.elevation}"
+      },
+      "states": {
+        "hover": {
+          "background-color": "{button.{variant}.background.hover}"
+        },
+        "pressed": {
+          "background-color": "{button.{variant}.background.pressed}",
+          "transform": "scale(0.98)"
+        },
+        "focus-visible": {
+          "outline-color": "{button.focus.ring}",
+          "outline-width": "2px",
+          "outline-offset": "2px"
+        },
+        "disabled": {
+          "background-color": "{button.disabled.background}",
+          "color": "{button.disabled.content}",
+          "cursor": "not-allowed"
+        },
+        "loading": {
+          "cursor": "progress"
+        }
+      },
+      "layout": {
+        "display": "inline-flex",
+        "direction": "row",
+        "align": "center",
+        "justify": "center"
+      },
+      "parts": {
+        "loadingSpinner": {
+          "description": "Busy indicator, shown while loading. Drawn with a CSS border in currentColor.",
+          "icon": {
+            "asset": "spinner",
+            "size": "1em"
+          },
+          "animation": "spin",
+          "visibleWhen": {
+            "prop": "loading"
+          }
+        },
+        "label": {
+          "element": null,
+          "description": "Rendered directly inside the root, so icons passed as children sit in the same flex row.",
+          "content": {
+            "prop": "children"
+          }
+        }
+      }
+    }
+  },
+  "a11y": {
+    "focusVisible": true,
+    "minHitArea": 44,
+    "contrast": "AA",
+    "keyboard": [
+      "Enter",
+      "Space"
+    ],
+    "notes": [
+      "Size sm renders 36px tall (8px + 20px line height + 8px), below the 44px target. Use md or lg for primary touch targets.",
+      "Disabled buttons are exempt from contrast requirements (WCAG 1.4.3)."
+    ]
+  },
+  "anchors": {
+    "figma": {
+      "fileKey": "GcTNmULEitLCTlmvIh2CJ3",
+      "componentSetKey": "af522f92a9a371afef84b46d72fd896695d0e4f9",
+      "nodeId": "77:146",
+      "tokenCollection": "03 Component",
+      "page": "Button"
+    },
+    "code": {
+      "importPath": "src/components/Button",
+      "export": "Button",
+      "stories": "src/components/Button/Button.stories.tsx",
+      "tokenContract": "src/components/Button/button.tokens.contract.json"
+    }
+  }
+}

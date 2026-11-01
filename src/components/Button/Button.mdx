@@ -1,0 +1,70 @@
+import { Meta, Canvas, Controls, ArgTypes, Source } from "@storybook/addon-docs/blocks";
+import * as Stories from "./Button.stories";
+import { TokenTable } from "../../docs/DocBlocks";
+
+<Meta of={Stories} />
+
+# Button
+
+Buttons trigger an action, such as submitting a form, opening a dialog or saving changes. Built on the React Aria [`Button`](https://react-spectrum.adobe.com/react-aria/Button.html).
+
+<Canvas of={Stories.Playground} />
+<Controls of={Stories.Playground} />
+
+## Usage
+
+<Source language="tsx" code={`import { Button } from "natjads";
+
+<Button onPress={save}>Save changes</Button>
+<Button variant="secondary" size="sm">Cancel</Button>`} />
+
+Use `onPress` rather than `onClick`. It fires consistently for mouse, touch, pen and keyboard (Enter and Space), and handles cases where a press is cancelled.
+
+## Variants
+
+- **Primary** is for the main action in a view. Use at most one per area.
+- **Secondary** is for other actions.
+- **Danger** is for destructive actions such as deleting.
+
+<Canvas of={Stories.Variants} />
+
+## Sizes
+
+<Canvas of={Stories.Sizes} />
+
+## States
+
+React Aria exposes state as data attributes, and the CSS uses them: `data-hovered`, `data-pressed`, `data-focus-visible`, `data-disabled` and `data-pending`. Hover styles only apply to real pointer hovers, not to taps on touch screens.
+
+<Canvas of={Stories.Disabled} />
+
+### Pending
+
+`isPending` shows a spinner, keeps the button focusable, ignores presses and announces the state to screen readers.
+
+<Canvas of={Stories.Pending} />
+
+### With icon
+
+Icon-only buttons need an `aria-label`.
+
+<Canvas of={Stories.WithIcon} />
+
+## Accessibility
+
+- Renders a native `<button>`, `type="button"` by default.
+- The focus ring only appears for keyboard focus (`data-focus-visible`) and uses `--button-focus-ring`.
+- A disabled button is removed from the tab order. Prefer `isPending` while work is in progress, so focus isn't lost.
+- Write labels as verbs that describe the outcome, such as "Save changes" rather than "OK".
+
+## Props
+
+Accepts all [React Aria Button props](https://react-spectrum.adobe.com/react-aria/Button.html#props) plus:
+
+<ArgTypes of={Stories} include={["variant", "size", "isDisabled", "isPending", "onPress", "type", "children", "className"]} />
+
+## Design tokens
+
+Button is styled only with these component tokens. Click a token to copy it.
+
+<TokenTable prefix="button/" />

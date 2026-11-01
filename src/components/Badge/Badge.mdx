@@ -1,0 +1,54 @@
+import { Meta, Canvas, Controls, ArgTypes, Source } from "@storybook/addon-docs/blocks";
+import * as Stories from "./Badge.stories";
+import { TokenTable } from "../../docs/DocBlocks";
+
+<Meta of={Stories} />
+
+# Badge
+
+A short, non-interactive label for status or category. Badges are static text, so there's no React Aria primitive.
+
+<Canvas of={Stories.Playground} />
+<Controls of={Stories.Playground} />
+
+## Usage
+
+<Source language="tsx" code={`import { Badge } from "natjads";
+
+<Badge variant="success">Active</Badge>`} />
+
+## Variants
+
+| Variant | Use for |
+| --- | --- |
+| `neutral` | Default, draft, inactive |
+| `success` | Completed, active, passed |
+| `warning` | Needs attention, pending |
+| `danger` | Failed, error, blocked |
+| `info` | New, informational |
+
+<Canvas of={Stories.Variants} />
+
+## With icon
+
+<Canvas of={Stories.WithIcon} />
+
+## In context
+
+<Canvas of={Stories.InContext} />
+
+## Accessibility
+
+- Don't rely on colour alone. The text must say the status, such as "Failed" and not just a red badge.
+- Keep labels to one or two words.
+- If a badge updates live, such as a build status, wrap the region in `aria-live="polite"` so changes are announced.
+
+## Props
+
+<ArgTypes of={Stories} include={["variant", "icon", "children", "className"]} />
+
+## Design tokens
+
+<TokenTable prefix="badge/" />
+
+The neutral badge has no border token, so it uses `--color-transparent` to keep the same size as the other variants.

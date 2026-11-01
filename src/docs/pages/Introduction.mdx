@@ -1,0 +1,36 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Introduction" />
+
+# natjads design system
+
+A React component library built on **[React Aria Components](https://react-spectrum.adobe.com/react-aria/components.html)**, Adobe's headless UI library, and styled entirely with **design tokens exported from Figma**.
+
+React Aria provides behaviour and accessibility: keyboard interaction, focus management, screen reader semantics, and pointer handling across mouse, touch and pen. This library adds the visual layer on top, using only CSS custom properties generated from the Figma variables.
+
+## What's inside
+
+| Component | React Aria primitive | Purpose |
+| --- | --- | --- |
+| [Button](?path=/docs/components-button--docs) | `Button` | Triggers an action |
+| [Input](?path=/docs/components-input--docs) | `TextField`, `Label`, `Input`, `FieldError` | Single-line text entry with label and validation |
+| [Card](?path=/docs/components-card--docs) | — (static container) | Groups related content |
+| [Dialog](?path=/docs/components-dialog--docs) | `DialogTrigger`, `ModalOverlay`, `Modal`, `Dialog` | Modal window for focused tasks and confirmations |
+| [Badge](?path=/docs/components-badge--docs) | — (static text) | Short status label |
+| [Tooltip](?path=/docs/components-tooltip--docs) | `TooltipTrigger`, `Tooltip`, `OverlayArrow` | Short hint on hover or focus |
+
+## How the tokens are layered
+
+The Figma file has three variable collections, and the CSS mirrors them:
+
+1. **Primitives** are raw values such as `--color-orange-500` or `--spacing-4`. Components never use these directly.
+2. **Semantic** tokens give values a purpose, such as `--color-action-primary-default`. This tier has **Light** and **Dark** modes.
+3. **Component** tokens are scoped to one component, such as `--button-primary-background-default`. **Components are styled only with these.**
+
+Change a value in Figma, re-export, run `npm run tokens`, and every component updates. See [Token architecture](?path=/docs/foundations-token-architecture--docs) for details.
+
+## Using this documentation
+
+- Use the **Theme** switch in the toolbar to see every example in Light or Dark mode.
+- Each component page has a live **Playground** with controls, examples, accessibility notes, a props table and the full list of **component tokens** it uses, traced back to their semantic and primitive values.
+- The **Accessibility** panel under each story runs axe checks on the rendered example.

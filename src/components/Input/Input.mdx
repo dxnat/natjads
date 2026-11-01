@@ -1,0 +1,68 @@
+import { Meta, Canvas, Controls, ArgTypes, Source } from "@storybook/addon-docs/blocks";
+import * as Stories from "./Input.stories";
+import { TokenTable } from "../../docs/DocBlocks";
+
+<Meta of={Stories} />
+
+# Input
+
+A single-line text field with a label, optional helper text and an error message. Built on the React Aria [`TextField`](https://react-spectrum.adobe.com/react-aria/TextField.html), which connects the label, description and error to the input for assistive technology.
+
+<Canvas of={Stories.Playground} />
+<Controls of={Stories.Playground} />
+
+## Usage
+
+<Source language="tsx" code={`import { Input } from "natjads";
+
+<Input label="Email" type="email" name="email" isRequired />
+
+<Input
+  label="Project name"
+  value={name}
+  onChange={setName}
+  description="Shown to your team."
+/>`} />
+
+`onChange` receives the **string value**, not an event.
+
+## Helper text
+
+<Canvas of={Stories.WithDescription} />
+
+## Validation
+
+Set `isInvalid` and `errorMessage` to show an error. The message replaces the helper text and is linked to the input with `aria-describedby`.
+
+<Canvas of={Stories.Invalid} />
+
+With native constraints such as `isRequired`, `type="email"` or `pattern`, wrapped in React Aria's `Form`, the browser's message appears on submit and focus moves to the first invalid field.
+
+<Canvas of={Stories.FormValidation} />
+
+## Disabled & required
+
+<Canvas of={Stories.Disabled} />
+<Canvas of={Stories.Required} />
+
+## Controlled
+
+<Canvas of={Stories.Controlled} />
+
+## Accessibility
+
+- Always give a `label`, or an `aria-label` when a visible label truly isn't possible. Placeholder text is not a label.
+- Errors are announced through `aria-describedby`, and the input gets `aria-invalid`.
+- Hover, focus and invalid styles come from React Aria's `data-hovered`, `data-focused`, `data-focus-visible` and `data-invalid` attributes.
+
+## Props
+
+Accepts all [React Aria TextField props](https://react-spectrum.adobe.com/react-aria/TextField.html#props) plus:
+
+<ArgTypes of={Stories} include={["label", "description", "errorMessage", "placeholder", "type", "name", "value", "defaultValue", "onChange", "isRequired", "isInvalid", "isDisabled", "isReadOnly", "validate"]} />
+
+## Design tokens
+
+<TokenTable prefix="input/" />
+
+The label uses `--type-label-md`, and the helper and error text use `--type-caption`. These are semantic tokens because the component tier has no label tokens yet. See [Token architecture](?path=/docs/foundations-token-architecture--docs).

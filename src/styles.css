@@ -1,0 +1,14 @@
+/* Design system entry stylesheet: tokens + base styles. Component styles are
+ * imported by each component module. */
+@import "../tokens/css/index.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--color-selection-background);
+  color: var(--color-selection-content);
+}

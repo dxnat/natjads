@@ -1,0 +1,8 @@
+/* Story canvas follows the active token theme. */
+.sb-story-surface {
+  background: var(--color-background-canvas);
+  color: var(--color-content-primary);
+  font: var(--type-body-md);
+  padding: var(--spacing-inset-lg);
+  border-radius: var(--radius-container);
+}

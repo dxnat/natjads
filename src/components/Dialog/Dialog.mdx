@@ -1,0 +1,70 @@
+import { Meta, Canvas, Controls, ArgTypes, Source } from "@storybook/addon-docs/blocks";
+import * as Stories from "./Dialog.stories";
+import { TokenTable } from "../../docs/DocBlocks";
+
+<Meta of={Stories} />
+
+# Dialog
+
+A modal window for a focused task or a confirmation. Built on the React Aria [`DialogTrigger`, `ModalOverlay`, `Modal` and `Dialog`](https://react-spectrum.adobe.com/react-aria/Modal.html) components.
+
+<Canvas of={Stories.Playground} />
+<Controls of={Stories.Playground} />
+
+## Usage
+
+Put the trigger button and the `Dialog` inside a `DialogTrigger`. `children` and `actions` can be functions that receive `close`.
+
+<Source language="tsx" code={`import { Dialog, DialogTrigger, Button } from "natjads";
+
+<DialogTrigger>
+  <Button>Publish</Button>
+  <Dialog
+    title="Publish changes?"
+    actions={({ close }) => (
+      <>
+        <Button variant="secondary" onPress={close}>Cancel</Button>
+        <Button onPress={() => { publish(); close(); }}>Publish</Button>
+      </>
+    )}
+  >
+    Your changes will be visible to everyone in the workspace.
+  </Dialog>
+</DialogTrigger>`} />
+
+## Destructive confirmation
+
+Use `role="alertdialog"` for destructive or interrupting confirmations. Clicking outside won't close it, and you should put initial focus on the safe action (`autoFocus` on Cancel).
+
+<Canvas of={Stories.Destructive} />
+
+## With a form
+
+<Canvas of={Stories.WithForm} />
+
+## Controlled
+
+Without a `DialogTrigger`, control the dialog with `isOpen` and `onOpenChange`.
+
+<Canvas of={Stories.Controlled} />
+
+## Accessibility
+
+React Aria handles:
+
+- moving focus into the dialog, trapping it there, and returning it to the trigger on close;
+- closing on <kbd>Esc</kbd>, and on a click outside when `isDismissable` is set;
+- locking page scroll and hiding the rest of the page from screen readers;
+- naming the dialog from its title (`slot="title"`).
+
+Entry and exit animations use `data-entering` and `data-exiting`. With reduced motion, only a fade is used.
+
+## Props
+
+Accepts React Aria [ModalOverlay props](https://react-spectrum.adobe.com/react-aria/Modal.html#props) plus:
+
+<ArgTypes of={Stories} include={["title", "children", "actions", "role", "isDismissable", "isKeyboardDismissDisabled", "isOpen", "defaultOpen", "onOpenChange", "className"]} />
+
+## Design tokens
+
+<TokenTable prefix="dialog/" />

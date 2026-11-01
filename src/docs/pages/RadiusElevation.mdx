@@ -1,0 +1,29 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { RadiusScale, ElevationScale, TokenTable } from "../DocBlocks";
+
+<Meta title="Foundations/Radius & elevation" />
+
+# Radius & elevation
+
+## Radius
+
+<RadiusScale />
+
+### Semantic radius
+
+<TokenTable tier="semantic" prefix="radius/" />
+
+## Elevation
+
+Each elevation level is a shadow built from `x`, `y`, `blur`, `spread` and `color` tokens. Use the shortcut with `box-shadow`, for example `box-shadow: var(--elevation-card)`.
+
+<ElevationScale />
+
+| Level | Used by |
+| --- | --- |
+| `flat` | Button, Input, Badge |
+| `raised` | Subtle lift on hover |
+| `card` | Card |
+| `dropdown` | Tooltip, menus |
+| `overlay` | Popovers |
+| `modal` | Dialog |

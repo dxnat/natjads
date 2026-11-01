@@ -1,0 +1,84 @@
+import { Meta, Source } from "@storybook/addon-docs/blocks";
+
+<Meta title="Getting started" />
+
+# Getting started
+
+## Run the docs
+
+```bash
+npm install
+npm run dev        # Storybook on http://localhost:6006
+```
+
+## Use the components
+
+Import from the package entry. It also loads the token stylesheet and base styles, so you don't need a separate CSS import.
+
+<Source
+  language="tsx"
+  code={`import { Button, Card, Dialog, DialogTrigger } from "natjads";
+
+export function Example() {
+  return (
+    <Card title="Ready to ship?" footer={
+      <DialogTrigger>
+        <Button>Publish</Button>
+        <Dialog
+          title="Publish changes?"
+          actions={({ close }) => <Button onPress={close}>Publish</Button>}
+        >
+          Your changes will be visible to everyone.
+        </Dialog>
+      </DialogTrigger>
+    }>
+      Three files changed.
+    </Card>
+  );
+}`}
+/>
+
+Fonts aren't bundled. Load **Inter** and **Roboto Mono**, for example from Google Fonts, or the stacks fall back to system fonts.
+
+## Theming
+
+Semantic tokens have **Light** and **Dark** modes:
+
+- With no attribute, the theme follows the operating system (`prefers-color-scheme`).
+- `data-theme="light"` or `data-theme="dark"` on `<html>` forces a theme.
+- The attribute also works on any element, so you can theme just one section of a page.
+
+<Source language="html" code={`<html data-theme="dark">…</html>
+
+<section data-theme="light">Always light, even inside a dark page</section>`} />
+
+## Styling with tokens
+
+Every component reads only its own **component tokens**. To restyle a component, change the token in Figma and rebuild, or override the custom property in CSS:
+
+<Source language="css" code={`/* Rounder buttons in one area of the app */
+.marketing {
+  --button-radius: var(--radius-pill);
+}`} />
+
+Each component also accepts `className`. For React Aria components it can be a function of render state, such as `({ isPressed }) => …`.
+
+## Updating tokens from Figma
+
+1. Re-export the Figma variables into `tokens/figma-variables.json`.
+2. Run `npm run tokens` to regenerate `tokens/css/*.css`.
+3. The components and these docs update automatically. The token tables read the same JSON.
+
+## Project structure
+
+```
+tokens/
+  figma-variables.json     # Figma export (source of truth)
+  css/                     # generated CSS, don't edit by hand
+scripts/build-tokens.mjs   # JSON -> CSS
+src/
+  index.ts                 # package entry
+  styles.css               # tokens + base styles
+  components/<Name>/       # Name.tsx, Name.css, Name.stories.tsx, Name.mdx
+  docs/                    # these docs pages and helpers
+```

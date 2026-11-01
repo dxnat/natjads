@@ -1,0 +1,17 @@
+import { Meta, Source } from "@storybook/addon-docs/blocks";
+import { ComponentContract } from "../../Contract";
+import contract from "../../../components/Button/button.contract.json";
+
+<Meta title="Contracts/Button/Component" />
+
+# Button · Component contract
+
+The component-level contract describes **what Button is**: its props and how each one maps to Figma and to code, its states, anatomy, accessibility requirements, and where it lives in each tool. Token slots use templates such as `{button.{variant}.content}`, which expand per prop value.
+
+Source file: `src/components/Button/button.contract.json`. The [token contract](?path=/docs/contracts-button-tokens--docs) is generated from it.
+
+<ComponentContract contract={contract} />
+
+## Raw contract
+
+<Source language="json" code={JSON.stringify(contract, null, 2)} />

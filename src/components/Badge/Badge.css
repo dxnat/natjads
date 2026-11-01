@@ -1,0 +1,50 @@
+.ds-badge {
+  --_bg: var(--badge-neutral-background);
+  --_fg: var(--badge-neutral-content);
+  /* No neutral border token exists; keep the 1px border so all variants share a size. */
+  --_border: var(--color-transparent);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--badge-gap);
+  padding: var(--badge-padding-y) var(--badge-padding-x);
+  border: 1px solid var(--_border);
+  border-radius: var(--badge-radius);
+  background: var(--_bg);
+  color: var(--_fg);
+  font: var(--badge-type);
+  letter-spacing: var(--badge-type-letter-spacing);
+  box-shadow: var(--badge-elevation);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.ds-badge[data-variant="success"] {
+  --_bg: var(--badge-success-background);
+  --_fg: var(--badge-success-content);
+  --_border: var(--badge-success-border);
+}
+
+.ds-badge[data-variant="warning"] {
+  --_bg: var(--badge-warning-background);
+  --_fg: var(--badge-warning-content);
+  --_border: var(--badge-warning-border);
+}
+
+.ds-badge[data-variant="danger"] {
+  --_bg: var(--badge-danger-background);
+  --_fg: var(--badge-danger-content);
+  --_border: var(--badge-danger-border);
+}
+
+.ds-badge[data-variant="info"] {
+  --_bg: var(--badge-info-background);
+  --_fg: var(--badge-info-content);
+  --_border: var(--badge-info-border);
+}
+
+.ds-badge svg {
+  width: 1em;
+  height: 1em;
+  flex: none;
+}

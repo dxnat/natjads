@@ -1,0 +1,98 @@
+.ds-button {
+  --_bg: var(--button-primary-background-default);
+  --_bg-hover: var(--button-primary-background-hover);
+  --_bg-pressed: var(--button-primary-background-pressed);
+  --_fg: var(--button-primary-content);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--button-gap);
+  padding: var(--button-md-padding-y) var(--button-md-padding-x);
+  border: 0;
+  border-radius: var(--button-radius);
+  background: var(--_bg);
+  color: var(--_fg);
+  font: var(--button-type);
+  letter-spacing: var(--button-type-letter-spacing);
+  box-shadow: var(--button-elevation);
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 120ms ease-out, transform 120ms ease-out;
+}
+
+.ds-button[data-variant="secondary"] {
+  --_bg: var(--button-secondary-background-default);
+  --_bg-hover: var(--button-secondary-background-hover);
+  --_bg-pressed: var(--button-secondary-background-pressed);
+  --_fg: var(--button-secondary-content);
+}
+
+.ds-button[data-variant="danger"] {
+  --_bg: var(--button-danger-background-default);
+  --_bg-hover: var(--button-danger-background-hover);
+  --_bg-pressed: var(--button-danger-background-pressed);
+  --_fg: var(--button-danger-content);
+}
+
+.ds-button[data-size="sm"] {
+  padding: var(--button-sm-padding-y) var(--button-sm-padding-x);
+}
+
+.ds-button[data-size="lg"] {
+  padding: var(--button-lg-padding-y) var(--button-lg-padding-x);
+}
+
+.ds-button[data-hovered] {
+  background: var(--_bg-hover);
+}
+
+.ds-button[data-pressed] {
+  background: var(--_bg-pressed);
+  transform: scale(0.98);
+}
+
+.ds-button[data-focus-visible] {
+  outline: 2px solid var(--button-focus-ring);
+  outline-offset: 2px;
+}
+
+.ds-button[data-disabled] {
+  background: var(--button-disabled-background);
+  color: var(--button-disabled-content);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ds-button[data-pending] {
+  cursor: progress;
+}
+
+.ds-button__spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: var(--radius-round);
+  animation: ds-button-spin 700ms linear infinite;
+}
+
+@keyframes ds-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-button {
+    transition: none;
+  }
+  .ds-button[data-pressed] {
+    transform: none;
+  }
+  .ds-button__spinner {
+    animation-duration: 1.5s;
+  }
+}

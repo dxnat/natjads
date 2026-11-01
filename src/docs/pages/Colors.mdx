@@ -1,0 +1,34 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { ColorRamps, TokenTable } from "../DocBlocks";
+
+<Meta title="Foundations/Colors" />
+
+# Colors
+
+## Primitive palette
+
+These are the raw colour ramps. **Don't use primitives in components**; use semantic or component tokens. Hover a swatch to see its CSS variable.
+
+<ColorRamps />
+
+## Semantic colours
+
+Semantic colours describe a purpose and change between Light and Dark. Click a token to copy `var(--…)`.
+
+### Background & surface
+<TokenTable tier="semantic" prefix={["colour/background/", "colour/surface/"]} />
+
+### Content
+<TokenTable tier="semantic" prefix="colour/content/" />
+
+### Border
+<TokenTable tier="semantic" prefix="colour/border/" />
+
+### Action
+<TokenTable tier="semantic" prefix={["colour/action/", "colour/link/"]} />
+
+### Focus, selection & overlay
+<TokenTable tier="semantic" prefix={["colour/focus/", "colour/selection/", "colour/overlay/"]} />
+
+### Status
+<TokenTable tier="semantic" prefix="colour/status/" />

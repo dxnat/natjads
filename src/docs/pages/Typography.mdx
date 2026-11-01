@@ -1,0 +1,20 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { TypeSpecimens, TokenTable } from "../DocBlocks";
+
+<Meta title="Foundations/Typography" />
+
+# Typography
+
+Inter is the UI typeface and Roboto Mono is used for code. Each semantic type style is available as:
+
+- a utility class, such as `.type-heading-md`;
+- a `font` shortcut, such as `font: var(--type-heading-md)`, used together with `letter-spacing: var(--type-heading-md-letter-spacing)`;
+- separate tokens for family, font size, line height, weight and letter spacing.
+
+## Type scale
+
+<TypeSpecimens />
+
+## Primitive values
+
+<TokenTable tier="primitive" prefix="type/" />

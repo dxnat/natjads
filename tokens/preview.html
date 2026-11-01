@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Token Preview</title>
+  <link rel="stylesheet" href="./css/index.css" />
+  <style>
+    body { margin: 0; background: var(--color-background-canvas); color: var(--color-content-primary); font: var(--type-body-md); }
+    main { max-width: 880px; margin: 0 auto; padding: var(--spacing-section-sm) var(--spacing-inset-md); display: grid; gap: var(--spacing-stack-xl); }
+    .row { display: flex; flex-wrap: wrap; gap: var(--spacing-inline-sm); align-items: center; }
+    .swatch { width: 56px; height: 56px; border-radius: var(--radius-control); border: 1px solid var(--color-border-subtle); }
+    .btn { font: var(--button-type); letter-spacing: var(--button-type-letter-spacing); border: 0; cursor: pointer;
+      border-radius: var(--button-radius); padding: var(--button-md-padding-y) var(--button-md-padding-x); }
+    .btn:focus-visible { outline: 2px solid var(--button-focus-ring); outline-offset: 2px; }
+    .btn-primary { background: var(--button-primary-background-default); color: var(--button-primary-content); }
+    .btn-primary:hover { background: var(--button-primary-background-hover); }
+    .btn-secondary { background: var(--button-secondary-background-default); color: var(--button-secondary-content); }
+    .btn-danger { background: var(--button-danger-background-default); color: var(--button-danger-content); }
+    .card { background: var(--card-background); border: 1px solid var(--card-border); border-radius: var(--card-radius);
+      padding: var(--card-padding); box-shadow: var(--card-elevation); display: grid; gap: var(--card-gap); }
+    .card h3 { margin: 0; font: var(--card-title-type); color: var(--card-content-title); }
+    .card p { margin: 0; color: var(--card-content-body); }
+    .input { font: var(--input-type); background: var(--input-background-default); color: var(--input-content-default);
+      border: 1px solid var(--input-border-default); border-radius: var(--input-radius); padding: var(--input-padding-y) var(--input-padding-x); }
+    .badge { font: var(--badge-type); letter-spacing: var(--badge-type-letter-spacing); border-radius: var(--badge-radius);
+      padding: var(--badge-padding-y) var(--badge-padding-x); border: 1px solid transparent; }
+    .badge-success { background: var(--badge-success-background); color: var(--badge-success-content); border-color: var(--badge-success-border); }
+    .badge-warning { background: var(--badge-warning-background); color: var(--badge-warning-content); border-color: var(--badge-warning-border); }
+    .badge-danger { background: var(--badge-danger-background); color: var(--badge-danger-content); border-color: var(--badge-danger-border); }
+    .badge-info { background: var(--badge-info-background); color: var(--badge-info-content); border-color: var(--badge-info-border); }
+    .tooltip { background: var(--tooltip-background); color: var(--tooltip-content); font: var(--tooltip-type);
+      border-radius: var(--tooltip-radius); padding: var(--tooltip-padding-y) var(--tooltip-padding-x); box-shadow: var(--tooltip-elevation); }
+    a { color: var(--color-link-default); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="row" style="justify-content: space-between">
+      <h1 class="type-heading-lg" style="margin: 0">Design tokens</h1>
+      <button class="btn btn-secondary" onclick="const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'">Toggle theme</button>
+    </div>
+
+    <section class="row" aria-label="Brand and status colours">
+      <div class="swatch" style="background: var(--color-action-primary-default)"></div>
+      <div class="swatch" style="background: var(--color-surface-default)"></div>
+      <div class="swatch" style="background: var(--color-surface-inverse)"></div>
+      <div class="swatch" style="background: var(--color-status-success-surface)"></div>
+      <div class="swatch" style="background: var(--color-status-warning-surface)"></div>
+      <div class="swatch" style="background: var(--color-status-danger-surface)"></div>
+      <div class="swatch" style="background: var(--color-status-info-surface)"></div>
+    </section>
+
+    <section class="row" aria-label="Buttons">
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-danger">Delete</button>
+      <input class="input" placeholder="Input field" />
+    </section>
+
+    <section class="row" aria-label="Badges">
+      <span class="badge badge-success">Success</span>
+      <span class="badge badge-warning">Warning</span>
+      <span class="badge badge-danger">Danger</span>
+      <span class="badge badge-info">Info</span>
+      <span class="tooltip">Tooltip</span>
+    </section>
+
+    <article class="card">
+      <h3>Card title</h3>
+      <p>Body text uses <code class="type-code">--card-body-type</code>. Here is a <a href="#">link</a>.</p>
+    </article>
+
+    <section aria-label="Type scale">
+      <p class="type-display-lg" style="margin:0">Display lg</p>
+      <p class="type-heading-md" style="margin:0">Heading md</p>
+      <p class="type-title" style="margin:0">Title</p>
+      <p class="type-body-lg" style="margin:0">Body lg</p>
+      <p class="type-label-sm" style="margin:0">LABEL SM</p>
+      <p class="type-caption" style="margin:0">Caption</p>
+    </section>
+  </main>
+</body>
+</html>
